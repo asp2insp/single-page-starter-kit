@@ -69,7 +69,8 @@ gulp.task("webpack-dev-server", function(callback) {
 
 	// Start a webpack-dev-server
 	new WebpackDevServer(webpack(myConfig), {
-		publicPath: "/" + myConfig.output.publicPath,
+		path: myConfig.output.path.substring(2),
+		publicPath: myConfig.output.publicPath,
 		stats: {
 			colors: true
 		}
